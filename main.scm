@@ -1,9 +1,11 @@
+;; fibonacci using a recursive definition
 (define (fib-rec n)
   (cond
     ((= n 0) 0)
     ((= n 1) 1)
     (else (+ (fib-rec (- n 1)) (fib-rec (- n 2))))))
 
+;; fibonacci using dinnamic programming
 (define (fib-dp n) 
   (define (aux back1 back2 i)
       (if (= i n)
@@ -13,12 +15,14 @@
     0
   (aux 1 0 0)))
 
+;; pascal triangle using a recursive deffinition
 (define (pasc-rec n k)
   (if (or (= k 0) (= n k)) 
       1
       (+ (pasc-rec (- n 1) (- k 1))
          (pasc-rec (- n 1) k))))
 
+;; pascal triangle using dinnamic programming (in lisp lingo: using tail-recursion)
 (define (pasc-list n k)
   (define (aux previous_row current_row i j)
     (cond 
@@ -35,7 +39,7 @@
       1
       (aux '(1 1) '(1 2) 2 2)))
 
-
+;; my optimizaiton on top of it
 (define (pasc-better n k)
   (define (aux prev-row cur-row i j)
     (cond
