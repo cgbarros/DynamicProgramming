@@ -8,4 +8,4 @@ I begin with `(fib-rec)`and `(fib-dp)`, i.e., recursive and "dynammic programmin
 - The second and second-to-last numbers are equal to the row's index (e. g. `(4, 1)` and `(4, 3)` should return `4`), so if `k = 1` or `k = n - k`, the function returns `n` immediately.
 - Lastly, and more importantly, Pascal's triangle is symmetric (e.g. `(10, 3)` is equal to `(10, 8)`. That means we only have to calculate half of it. We never have to calculare `k` for `k * 2 > n`. With this optimization we should have slightly more than double the speed. This is implemented in `(pasc-better)`
 
-You can run and test this implementation at https://replit.com/@CaioFooBarros/DynamicProgramming. Since Scheme is a high-level language it's slower than C, for instance, so you can easilly see the effect of the optimization. 
+You can run and test this implementation at https://replit.com/@CaioFooBarros/DynamicProgramming. Since Scheme is a high-level language it's slower than C, for instance, so you can easilly see the effect of the optimization. Check a C implementation of the same optimization at https://github.com/cgbarros/Pascal-Triangle-in-C.

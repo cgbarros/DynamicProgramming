@@ -1,9 +1,0 @@
-# Dynnamic programming in Scheme
-
-This is a scheme translation of dyannamic programming techniques from Steven S. Skiena - The Algorithm Design Manual-Springer (2020). I was listening to an interview from Steven in a podcast and they mentioned that dynammic progrraming is a very hard thing to understand. I decided to give it a try and was surprised to see that it is nothing more than what in Lisp is known as tail recursion. Basically we store in a list (or an array) only the values calculated in the last itteration of a recursive function because that's all that we need to know the next valuess. This saves a ton of memory.
-
-I begin with `(fib-rec)`and `(fib-dp)`, i.e., recursive and "dynammic programming" implementation of the fibonacci series. I then move on to functions that calculate Pascal's Triangle (as and example that is given in Steven's book). Finally `(pasc-better)` is my optimization on top of it. It optimizes in three conditions:
-
-- The first and last numbers in each "row" of Pascal's triangle is 1, so if k = 0 or k = n (the last number), the function returns 1 immediately.
-- The second and second-to-last numbers are equal to the row's index (e. g. `(4, 1)` and `(4, 3)` should return `4`), so if `k = 1` or `k = n - k`, the function returns `n` immediately.
-- Lastly, and more importantly, Pascal's triangle is symmetric (e.g. `(10, 3)` is equal to `(10, 8)`. That means we onlytlhave to late half of it. That means we never have to calculare `k` for `k * 2 > n`.
