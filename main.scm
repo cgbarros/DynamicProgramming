@@ -5,7 +5,7 @@
     ((= n 1) 1)
     (else (+ (fib-rec (- n 1)) (fib-rec (- n 2))))))
 
-;; fibonacci using dinnamic programming
+;; fibonacci using dynamic programming
 (define (fib-dp n) 
   (define (aux back1 back2 i)
       (if (= i n)
@@ -22,7 +22,7 @@
       (+ (pasc-rec (- n 1) (- k 1))
          (pasc-rec (- n 1) k))))
 
-;; pascal triangle using dinnamic programming (in lisp lingo: using tail-recursion)
+;; pascal triangle using dynamic programming (in lisp lingo: using tail-recursion)
 (define (pasc-list n k)
   (define (aux previous_row current_row i j)
     (cond 
